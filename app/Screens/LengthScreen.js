@@ -1,6 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import styled from 'styled-components';
+import DismissKeyboard from './Components/DismissKeyboard';
 
 import {Unit, Input, InputContainer} from './styles/Inputs.styles';
 
@@ -11,40 +12,44 @@ const SpeedScreen = () => {
   const [km, setKm] = React.useState(null);
 
   return (
-    <Container>
-      <InputContainer>
-        <Input
-          keyboardType="decimal-pad"
-          value={feets}
-          onChangeText={(text) => setFeets(text)}
-        />
-        <Unit>ft</Unit>
-      </InputContainer>
-      <InputContainer>
-        <Input
-          keyboardType="decimal-pad"
-          value={meters}
-          onChangeText={(text) => setMeters(text)}
-        />
-        <Unit>m</Unit>
-      </InputContainer>
-      <InputContainer>
-        <Input
-          keyboardType="decimal-pad"
-          value={nm}
-          onChangeText={(text) => setNm(text)}
-        />
-        <Unit>nm</Unit>
-      </InputContainer>
-      <InputContainer>
-        <Input
-          keyboardType="decimal-pad"
-          value={km}
-          onChangeText={(text) => setKm(text)}
-        />
-        <Unit>km</Unit>
-      </InputContainer>
-    </Container>
+    <DismissKeyboard>
+      <Container>
+        <View>
+          <InputContainer>
+            <Input
+              keyboardType="decimal-pad"
+              value={feets}
+              onChangeText={(text) => setFeets(text)}
+            />
+            <Unit>ft</Unit>
+          </InputContainer>
+          <InputContainer>
+            <Input
+              keyboardType="decimal-pad"
+              value={meters}
+              onChangeText={(text) => setMeters(text)}
+            />
+            <Unit>m</Unit>
+          </InputContainer>
+          <InputContainer>
+            <Input
+              keyboardType="decimal-pad"
+              value={nm}
+              onChangeText={(text) => setNm(text)}
+            />
+            <Unit>nm</Unit>
+          </InputContainer>
+          <InputContainer>
+            <Input
+              keyboardType="decimal-pad"
+              value={km}
+              onChangeText={(text) => setKm(text)}
+            />
+            <Unit>km</Unit>
+          </InputContainer>
+        </View>
+      </Container>
+    </DismissKeyboard>
   );
 };
 

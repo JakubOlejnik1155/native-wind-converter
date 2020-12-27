@@ -3,6 +3,7 @@ import {View} from 'react-native';
 import styled from 'styled-components';
 
 import {Unit, Input, InputContainer} from './styles/Inputs.styles';
+import DismissKeyboard from './Components/DismissKeyboard';
 
 const SpeedScreen = () => {
   const [knots, setKnots] = React.useState(null);
@@ -11,40 +12,44 @@ const SpeedScreen = () => {
   const [kph, setKph] = React.useState(null);
 
   return (
-    <Container>
-      <InputContainer>
-        <Input
-          keyboardType="decimal-pad"
-          value={knots}
-          onChangeText={(text) => setKnots(text)}
-        />
-        <Unit>knt</Unit>
-      </InputContainer>
-      <InputContainer>
-        <Input
-          keyboardType="decimal-pad"
-          value={boufort}
-          onChangeText={(text) => setBoufort(text)}
-        />
-        <Unit>°B</Unit>
-      </InputContainer>
-      <InputContainer>
-        <Input
-          keyboardType="decimal-pad"
-          value={mps}
-          onChangeText={(text) => setMps(text)}
-        />
-        <Unit>mps</Unit>
-      </InputContainer>
-      <InputContainer>
-        <Input
-          keyboardType="decimal-pad"
-          value={kph}
-          onChangeText={(text) => setKph(text)}
-        />
-        <Unit>kph</Unit>
-      </InputContainer>
-    </Container>
+    <DismissKeyboard>
+      <Container>
+        <View>
+          <InputContainer>
+            <Input
+              keyboardType="decimal-pad"
+              value={knots}
+              onChangeText={(text) => setKnots(text)}
+            />
+            <Unit>knt</Unit>
+          </InputContainer>
+          <InputContainer>
+            <Input
+              keyboardType="decimal-pad"
+              value={boufort}
+              onChangeText={(text) => setBoufort(text)}
+            />
+            <Unit>°B</Unit>
+          </InputContainer>
+          <InputContainer>
+            <Input
+              keyboardType="decimal-pad"
+              value={mps}
+              onChangeText={(text) => setMps(text)}
+            />
+            <Unit>mps</Unit>
+          </InputContainer>
+          <InputContainer>
+            <Input
+              keyboardType="decimal-pad"
+              value={kph}
+              onChangeText={(text) => setKph(text)}
+            />
+            <Unit>kph</Unit>
+          </InputContainer>
+        </View>
+      </Container>
+    </DismissKeyboard>
   );
 };
 
