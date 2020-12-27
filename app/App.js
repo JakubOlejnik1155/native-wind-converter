@@ -48,7 +48,7 @@ const App = () => {
         backgroundColor="transparent"
         translucent={true}
       />
-      <ImageBackground source={bg3} style={styles.imagebackground}>
+      <ImageBackground source={bg1} style={styles.imagebackground}>
         <SafeAreaView style={styles.container}>
           <TabView
             navigationState={{index, routes}}
