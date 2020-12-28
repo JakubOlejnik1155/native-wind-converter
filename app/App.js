@@ -7,11 +7,14 @@ import {
   StyleSheet,
   Dimensions,
   ImageBackground,
+  TouchableOpacity,
+  Image,
 } from 'react-native';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 
 import SpeedScreen from './Screens/SpeedScreen';
 import LengthScreen from './Screens/LengthScreen';
+import info from './assets/info.png';
 //! pick one of thise backgrounds
 import bg1 from './assets/bg1.jpg';
 import bg2 from './assets/bg2.jpg';
@@ -48,7 +51,7 @@ const App = () => {
         backgroundColor="transparent"
         translucent={true}
       />
-      <ImageBackground source={bg1} style={styles.imagebackground}>
+      <ImageBackground source={bg2} style={styles.imagebackground}>
         <SafeAreaView style={styles.container}>
           <TabView
             navigationState={{index, routes}}
@@ -58,6 +61,9 @@ const App = () => {
             renderTabBar={renderTabBar}
           />
           <Text style={styles.copyright}>© 2020 Jakub Olejnik</Text>
+          {/* <TouchableOpacity style={styles.infobtn}>
+            <Image source={info} style={styles.infoimg} />
+          </TouchableOpacity> */}
         </SafeAreaView>
       </ImageBackground>
     </>
@@ -65,6 +71,15 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+  infobtn: {
+    position: 'absolute',
+    bottom: 2,
+    right: 2,
+  },
+  infoimg: {
+    width: 20,
+    height: 20,
+  },
   imagebackground: {
     flex: 1,
     resizeMode: 'cover',
