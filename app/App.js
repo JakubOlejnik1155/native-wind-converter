@@ -7,8 +7,6 @@ import {
   StyleSheet,
   Dimensions,
   ImageBackground,
-  TouchableOpacity,
-  Image,
 } from 'react-native';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 
