@@ -9,6 +9,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
+import RNBootSplash from 'react-native-bootsplash';
 
 import SpeedScreen from './Screens/SpeedScreen';
 import LengthScreen from './Screens/LengthScreen';
@@ -40,6 +41,12 @@ const App = () => {
   const renderScene = SceneMap({
     speed: SpeedScreen,
     length: LengthScreen,
+  });
+  React.useEffect(() => {
+    const SplashHandler = async () => {
+      await RNBootSplash.hide({fade: true});
+    };
+    SplashHandler();
   });
 
   return (

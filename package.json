@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "16.13.1",
     "react-native": "0.63.4",
+    "react-native-bootsplash": "^3.1.2",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-reanimated": "^1.13.2",
     "react-native-tab-view": "^2.15.2",
